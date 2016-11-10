@@ -1,3 +1,4 @@
+# Dalcho - Typecho 的又一款简洁风主题
 > Dalcho 是一款简洁大气而不失功能的 Typecho 主题
 
 ## 截图和预览
