@@ -29,11 +29,14 @@ function themeConfig($form) {
     $form->addInput($sidebarBlock->multiMode());
 **/
 
-		$showRocket = new Typecho_Widget_Helper_Form_Element_Checkbox('showRocket', 
-    array('ShowRocket' => _t('显示返回到顶部小火箭')),
-    array('ShowRocket'), _t('交互'));
+		$ux = new Typecho_Widget_Helper_Form_Element_Checkbox('ux', 
+    array(
+    	'showRocket' => _t('显示返回到顶部小火箭'),
+    	'smoothScroll' => _t('平滑滚动（与 Pjax 功能互斥）'),
+    	'usePjax' => _t('启用 Pjax 加速（Beta）')),
+    array('ShowRocket','smoothScroll','usePjax'), _t('交互'));
     
-    $form->addInput($showRocket->multiMode());
+    $form->addInput($ux->multiMode());
 
     $linkAbout = new Typecho_Widget_Helper_Form_Element_Text('linkAbout', NULL, NULL, _t('关于链接'), _t('每页底部的关于链接'));
     $form->addInput($linkAbout);

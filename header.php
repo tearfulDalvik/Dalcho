@@ -14,7 +14,8 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
 	<!-- 使用url函数转换相关路径 -->
-	<?php if($this->options->favIcon):?><link rel="shortcut icon" href="<?php $this->options->favIcon(); ?>"><?php  endif; ?>
+	<?php if($this->options->favIcon):?><link rel="shortcut icon" href="<?php $this->options->favIcon(); ?>">
+	<link rel="apple-touch-icon-precomposed" href="<?php $this->options->favIcon(); ?>"/><?php  endif; ?>
 	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
@@ -24,6 +25,15 @@
   <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 	<script src="<?php $this->options->themeUrl('src/js/audiojs/audio.min.js'); ?>"></script>
 	<script src="<?php $this->options->themeUrl('src/js/smooth-scroll.min.js'); ?>"></script>
+	
+	<?php if (!empty($this->options->ux) && in_array('smoothScroll', $this->options->ux)): ?>
+	<script src="<?php $this->options->themeUrl('src/js/smooth-scroll.js'); ?>"></script>
+	<?php endif; ?>
+	
+	<!--Highlight-->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+	
 	<script>
 		audiojs.events.ready(function() {
 			var as = audiojs.createAll();
